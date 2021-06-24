@@ -219,12 +219,22 @@
 
 // let userName = prompt("What is your name?", "John");
 // let userAge = +prompt("What is your age?", 29);
-
-// if ( (userName === "John" && userAge === 29) || (userName === "Kate" && userAge === 15) ) {
+// let choice = (userName === "John" && userAge === 29) || (userName === "Kate" && userAge === 15);
+// switch(choice) {
+//     case true:
+//         console.log(`Привет ${userName} ${userAge}`);
+//         break;
+//     case false:
+//         console.log("Пока");
+//         break;
+//     default:
+//         console.log("Ошибка!");
+// }
+// /*if ( (userName === "John" && userAge === 29) || (userName === "Kate" && userAge === 15) ) {
 //     console.log(`Привет ${userName} ${userAge}`);
 // } else {
 //     console.log("Пока");
-// }
+// }*/
 
 // //(userName === "John" && userAge === 29) || (userName === "Kate" && userAge === 15) ? console.log(`Привет ${userName} ${userAge}`) : console.log("Пока");
 
