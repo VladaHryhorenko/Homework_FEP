@@ -55,22 +55,54 @@
 
 //Task 5
 
-let person = {
-    firstName: "Vlada",
-    lastName: "Hryhorenko",
-    age: 20,
-    sex: "female",
-    job: {
-      position: "Markup Developer",
-      company: "Momomo",
-      payment: 2000
-    }
-  };
-  let key = prompt("Enter a key that you`d like to find", "age");
-  if (key in person) {
-      console.log(`${key}: ${person[key]}`);
-  } else {
-    console.log("There is no such key");
-  }
+// let person = {
+//     firstName: "Vlada",
+//     lastName: "Hryhorenko",
+//     age: 20,
+//     sex: "female",
+//     job: "Markup Developer",
+//     hobby: "volleyball"
+//   };
+//   let key = prompt("Enter a key that you`d like to find", "age");
+//   if (key in person) {
+//       console.log(`${key}: ${person[key]}`);
+//   } else {
+//     console.log("There is no such key");
+//   }
+
+
+// //Task 6 - with task 5
+
+// let obj = {};
+// obj.brand = prompt("Brand of the phone?", "Xiaomi");
+// obj.model = prompt("Model of the phone?", "X-123");
+// obj.resolution = prompt ("Resolution: ", "300");
+// obj.price = prompt ("Price: ", "9000");
+// obj.color = prompt ("Color: ", "Red");
+// person.obj = obj;
+// console.log(person);
+
+
+//Task 7
+let year = new Date;
+year = year.getFullYear() - 1;
+let dates = {
+    currentDate: new Date(),
+    yearAgo: new Date().setFullYear(year),
+    enteredDate: prompt("Введите свою дату", "2020-08-20")
+}
+console.log(dates.currentDate);
+console.log(dates.yearAgo);
+console.log(dates.enteredDate);
+if ( dates.enteredDate >= dates.yearAgo && dates.enteredDate <= dates.urrentDate ) {
+    console.log("Введенная дата попадает в диапазон дат");
+} else {
+    console.log("Введенная дата не попадает в диапазон дат");
+}
+
+
+
+
+
 
 
