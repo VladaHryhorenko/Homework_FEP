@@ -70,3 +70,152 @@
 //     alert("Неверно! Условие не выполняется!");
 // }
 
+//Task 7
+
+// let x = +prompt("Enter namber 1", 7);
+// let y = +prompt("Enter number 2", 6);
+
+// if ( (x > 2 && x < 11) || (y >= 6 && y < 14) ) {
+//     x = 2 * x + 5;
+//     alert(`2 * x + 5 = ${x}`);
+// } else {
+//     alert("Введенные числа не удовлеворяют условиям");
+// }
+
+//Task 8
+
+// let userName = prompt("What is yout name?");
+// if ( userName === "" ){
+//     alert("You entered an empty string");
+// } else if (userName === null) {
+//     alert("You pushed 'Отмена'");
+// } else {
+//     alert( `Hello, ${userName}`);
+// }
+
+
+//Task 9
+
+// let greeting = "";
+// let lang = prompt("Choose the language: ru, en or de", "ru");
+// /*
+// if (lang === "ru") {
+//     alert("Привет!");
+// } else if (lang === "en") {
+//     alert("Hello!");
+// } else if (lang === "de") {
+//     alert("Guten Tag!");
+// } else {
+//     alert("Error! You didn`t choose the lang correctly");
+// }*/
+
+// switch(lang) {
+//     case "ru":
+//         alert("Привет!");
+//         break;
+
+//     case "en":
+//         alert("Hello!");
+//         break;
+
+//     case "de":
+//         alert("Guten Tag!");
+//         break;
+
+//     default:
+//         alert("Error! You didn`t choose the lang correctly");
+//         break;
+// }
+
+//Task 10
+
+// let mounth = new Date();
+
+// if (mounth.getMonth() >= 2 && mounth.getMonth() < 5) {
+//     alert("It`s spring");
+// } else if (mounth.getMonth() >= 5 && mounth.getMonth() < 8) {
+//     alert ("It`s summer");
+// } else if (mounth.getMonth() >= 8 && mounth.getMonth() < 11) {
+//     alert ("It`s autumn");
+// } else {
+//     alert("it`s winter");
+// }
+// console.log(mounth, mounth.getMonth() );
+
+//Task 11
+
+// let lang = prompt("Choose the language (ru or en)");
+// let day = +prompt("Choose the day (0 - sunday... 6 - monday)");
+
+// if ( lang === "ru" ) {
+//     switch(day) {
+//         case 0:
+//             alert("Воскресенье");
+//             break;
+//         case 1:
+//             alert("Понедельник");
+//             break;
+//         case 2:
+//             alert("Вторник");
+//             break;
+//         case 3:
+//             alert("Среда");
+//             break;
+//         case 4:
+//             alert("Четверг");
+//             break;
+//         case 5:
+//             alert("Пятница");
+//             break;
+//         case 6:
+//             alert("Суббота");
+//             break;
+//         default:
+//             alert("Ты неправильно выбрал(-а) день");
+//             break;
+//     }
+// } else if ( lang === "en" ){
+//     switch(day) {
+//         case 0:
+//             alert("Sunday");
+//             break;
+//         case 1:
+//             alert("Monday");
+//             break;
+//         case 2:
+//             alert("Tuesday");
+//             break;
+//         case 3:
+//             alert("Wednesday");
+//             break;
+//         case 4:
+//             alert("Thursday");
+//             break;
+//         case 5:
+//             alert("Friday");
+//             break;
+//         case 6:
+//             alert("Saturday");
+//             break;
+//         default:
+//             alert("You choosed an uncorrect day");
+//             break;
+//     }
+// } else {
+//     alert("Uncorrect language");
+// }
+
+
+//Task 12
+
+// let userName = prompt("What is your name?", "John");
+// let userAge = +prompt("What is your age?", 29);
+
+// if ( (userName === "John" && userAge === 29) || (userName === "Kate" && userAge === 15) ) {
+//     console.log(`Привет ${userName} ${userAge}`);
+// } else {
+//     console.log("Пока");
+// }
+
+// //(userName === "John" && userAge === 29) || (userName === "Kate" && userAge === 15) ? console.log(`Привет ${userName} ${userAge}`) : console.log("Пока");
+
