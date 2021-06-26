@@ -1,13 +1,18 @@
 
 
-//Task 1
+//Task 1 ET-3min; AT-5min
 
 // let arr = [2, 5, 7, 's', 22, 'a', 'v', 'u', 8];
 // let summ = 0;
+// let str = "";
 // for (let i = 0; i < arr.length; i++) {
-//     summ += arr[i];
+//     if ( !isNaN(arr[i]) ) {
+//         summ += arr[i];
+//     } else continue;
 // }
-// alert(summ);
+
+// alert(`Array: ${arr}\nSumm: ${summ}`);
+
 
 //Task 2
 
@@ -22,7 +27,7 @@
 // } 
 
 
-//Task 3
+//Task 3 ET-5min; AT-4min
 
 // let arr = [ 'AngularJS', 'jQuery'];
 // console.log(arr);
@@ -40,7 +45,7 @@
 // }
 
 
-//Task 4
+//Task 4 ET-10min; AT-15min
 
 // let str = "Как однажды Жак звонарь сломал фонарь головой";
 // let arr = str.split(' ');
@@ -53,7 +58,7 @@
 // alert(str);
 
 
-//Task 5
+//Task 5 ET-8min; AT-8min
 
 // let person = {
 //     firstName: "Vlada",
@@ -83,22 +88,76 @@
 // console.log(person);
 
 
-//Task 7
-let year = new Date;
-year = year.getFullYear() - 1;
-let dates = {
-    currentDate: new Date(),
-    yearAgo: new Date().setFullYear(year),
-    enteredDate: prompt("Введите свою дату", "2020-08-20")
+//Task 7 ET-8min; AT-60min
+
+// let dates = {
+//     currentDate: new Date(),
+//     yearAgo: new Date(new Date().getFullYear() - 1, new Date().getMonth(), new Date().getDate()),
+//     enteredDate: new Date(prompt("Введите свою дату", "2020-08-20"))
+// }
+// console.log(dates.currentDate);
+// console.log(dates.yearAgo);
+// console.log(dates.enteredDate);
+
+// if ( dates.enteredDate >= dates.yearAgo && dates.enteredDate <= dates.currentDate ) {
+//     console.log("Введенная дата попадает в диапазон дат");
+// } else {
+//     console.log("Введенная дата не попадает в диапазон дат");
+// }
+
+
+//Task 8
+
+// let arr = [];
+// let n = 10;
+// let summ = 0;
+
+// for (let i = 0; i < n; i++) {
+//     arr.push(prompt("Enter a value to an array"));
+// }
+
+// console.log(arr);
+
+// for (let i = 0; i < arr.length; i++) {
+//     if ( !isNaN(+arr[i])) {
+//         summ += +arr[i];
+//     } else continue;
+// }
+// alert(`Summ of numbers is ${summ}`);
+
+
+//Task 9 ET-5min; AT-11min
+
+// let newArray = [];
+// let i, j;
+// for (i = 0; i < 10; i++) {
+//     newArray[i] = [];
+//     for (j = 0; j < 10; j++) {
+//         newArray[i][j] = `${i+1}*${j+1}=${(i+1)*(j+1)}`;
+//     }
+// }
+// for (i = 0; i < 10; i++) {
+//     console.log(newArray[i]);
+// }
+
+//Task 10 ET-3min; AT-3min
+
+let img = {
+    src: "https://www.google.com.ua/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png",
+    alt: "",
+    style: {
+        border: {
+            "border-color" : "#ccc",
+            "border-width": "1px",
+            "border-style" : "solid"
+        }
+    },
+    width: "200"  
 }
-console.log(dates.currentDate);
-console.log(dates.yearAgo);
-console.log(dates.enteredDate);
-if ( dates.enteredDate >= dates.yearAgo && dates.enteredDate <= dates.urrentDate ) {
-    console.log("Введенная дата попадает в диапазон дат");
-} else {
-    console.log("Введенная дата не попадает в диапазон дат");
-}
+
+
+
+
 
 
 
