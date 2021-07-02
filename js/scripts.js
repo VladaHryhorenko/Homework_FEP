@@ -138,7 +138,10 @@
 function objectExtend(target, ...source) {
     console.log(source);
     for ( let j = 0; j < source.length; j++) {
-        target.source[j][key];
+        let
+    target.source[j][key];
+        //for ()let key in O
+        
     }
 }
 
@@ -151,7 +154,8 @@ let target = {
 let job = {
     position: "developer",
     company: "microsoft",
-    salary: 7000
+    salary: 7000,
+    age: 77
 }
 
 objectExtend (target, job, {married: false, children: false});
