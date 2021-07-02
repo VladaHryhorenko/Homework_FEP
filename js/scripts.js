@@ -52,7 +52,7 @@
 // /*for (j = 0; j < arr.length; j++) {
 //     console.log(arr[j]);
 // }*/
-// arr.splice(1, 3, arr[2], arr[3], arr[1]);
+// arr.splice(1, 6, arr[2], arr[3], arr[1], arr[4], arr[6], arr[5]);
 // //console.log(arr);
 // str = arr.join(" ");
 // alert(str);
@@ -60,20 +60,21 @@
 
 //Task 5 ET-8min; AT-8min
 
-// let person = {
-//     firstName: "Vlada",
-//     lastName: "Hryhorenko",
-//     age: 20,
-//     sex: "female",
-//     job: "Markup Developer",
-//     hobby: "volleyball"
-//   };
-//   let key = prompt("Enter a key that you`d like to find", "age");
-//   if (key in person) {
-//       console.log(`${key}: ${person[key]}`);
-//   } else {
-//     console.log("There is no such key");
-//   }
+let person = {
+    firstName: "Vlada",
+    lastName: "Hryhorenko",
+    age: 20,
+    sex: "female",
+    job: "Markup Developer",
+    hobby: "volleyball"
+  };
+  let key = prompt("Enter a key that you`d like to find", "age");
+  if (key in person) {
+      console.log(`${key}: ${person[key]}`);
+  } else {
+    person[key] = prompt("Key is added to array. Enter a value");
+  }
+  //console.log(person);
 
 
 // //Task 6 - with task 5
@@ -142,18 +143,18 @@
 
 //Task 10 ET-3min; AT-3min
 
-let img = {
-    src: "https://www.google.com.ua/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png",
-    alt: "",
-    style: {
-        border: {
-            "border-color" : "#ccc",
-            "border-width": "1px",
-            "border-style" : "solid"
-        }
-    },
-    width: "200"  
-}
+// let img = {
+//     src: "https://www.google.com.ua/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png",
+//     alt: "",
+//     style: {
+//         border: {
+//             "border-color" : "#ccc",
+//             "border-width": "1px",
+//             "border-style" : "solid"
+//         }
+//     },
+//     width: "200"  
+// }
 
 
 
