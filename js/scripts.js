@@ -135,32 +135,51 @@
 
 //Task 6
 
-function objectExtend(target, ...source) {
-    console.log(source);
-    for ( let j = 0; j < source.length; j++) {
-        let
-    target.source[j][key];
-        //for ()let key in O
+// function objectExtend(target, ...source) {
+//     console.log(source);
+//     for ( let j = 0; j < source.length; j++) {
+//         let term = source[j];
+//         console.log(term);
+//         for (let key in term) {
+//             target[key] = term[key];
+//         }
         
+//     }
+// }
+
+// let target = {
+//     name: "John",
+//     lastName: "Parker",
+//     age: 30
+// }
+// console.log({...target});
+
+// let job = {
+//     position: "developer",
+//     company: "microsoft",
+//     salary: 7000,
+//     age: 77
+// }
+
+// objectExtend (target, job, {married: false, children: false});
+// console.log(target);
+
+//Task 7
+
+function setComment(date,  message , ...author= "Anonymous") {
+    if (!author === undefined) {
+        return alert("Данные переданы в функцию некорректно");
+    } else {0
+        console.log(`${author}, ${date} \n${message}`);
     }
-}
+};
 
-let target = {
-    name: "John",
-    lastName: "Parker",
-    age: 30
-}
+setComment('2016-11-02', 'Everything is ok', ...'John');
+//setComment('2016-11-02', 'Everything is ok'); 
+setComment('2016-11-02','John');
 
-let job = {
-    position: "developer",
-    company: "microsoft",
-    salary: 7000,
-    age: 77
-}
 
-objectExtend (target, job, {married: false, children: false});
-console.log(target);
-
+//Task 8
 
 
 
