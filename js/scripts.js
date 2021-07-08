@@ -166,10 +166,10 @@
 
 //Task 7
 
-function setComment(date,  message , ...author= "Anonymous") {
+function setComment(date,  message , author= "Anonymous") {
     if (!author === undefined) {
         return alert("Данные переданы в функцию некорректно");
-    } else {0
+    } else {
         console.log(`${author}, ${date} \n${message}`);
     }
 };
