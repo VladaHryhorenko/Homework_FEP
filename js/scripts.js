@@ -166,20 +166,56 @@
 
 //Task 7
 
-function setComment(date,  message , author= "Anonymous") {
-    if (!author === undefined) {
-        return alert("Данные переданы в функцию некорректно");
-    } else {
-        console.log(`${author}, ${date} \n${message}`);
-    }
-};
+// function setComment(date,  message , author = "Anonymous") {
+//     if (author === null) {
+//         author= "Anonymous";
+//     };
+//     if ((date === undefined) || (message === undefined) || (date === null) || (message === null)) {
+//         // return alert("Данные переданы в функцию некорректно");
+//         return console.log("Данные переданы в функцию некорректно");
+//     } else {
+//         console.log(`${author}, ${date} \n${message}`);
+//     }
+// };
 
-setComment('2016-11-02', 'Everything is ok', ...'John');
-//setComment('2016-11-02', 'Everything is ok'); 
-setComment('2016-11-02','John');
+// setComment('2016-11-02', 'Everything is ok', 'John');
+// setComment('2016-11-02', 'Everything is ok'); 
+// setComment('2016-11-02'); 
+// setComment(null, 'hello', 'Kate');
+// setComment('2016-11-02', null, 'Bob');
+// setComment('2016-11-02','John', null);
 
 
 //Task 8
+
+// function createTimer() {
+//     let performance;
+//     return function now() {
+//         return new Date();
+//     };
+// }
+
+// let timer = createTimer();
+// alert('!')  // код, время выполнения которого нужно измерить
+// alert( timer() ); 
+
+
+//Task 9
+
+function createAdder(val) {
+    let name = val;
+    return function val(param) {
+        return name + param;
+    }
+};
+
+let hello = createAdder('Hello, ');
+alert( hello('John') ); // Hello, John
+alert( hello('Harry') ); // Hello, Harry
+
+let plus = createAdder(5);
+alert( plus(1) ); // 6
+alert( plus(5) ); // 10
 
 
 
