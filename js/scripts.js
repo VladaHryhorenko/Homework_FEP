@@ -74,23 +74,117 @@
 
 //Task 6
 
-function summOfNumbers(number) {
-    let arr = number.toString().split("");
-    console.log(arr);
-    let summ = 0;
-    for (let i = 0; i < arr.length; i++) {
-        summ += +arr[i];
+// function summOfNumbers(number) {
+//     let arr = number.toString().split("");
+//     console.log(arr);
+//     let summ = 0;
+//     for (let i = 0; i < arr.length; i++) {
+//         summ += +arr[i];
+//     }
+//     console.log(summ);
+//     if (summ > 9) {
+//         summOfNumbers(summ);
+//     } else return summ;
+// }
+
+// let number = 987545999876543454;
+
+// let res = summOfNumbers(number);
+// console.log(res);
+
+
+// function Animal(name, age) {
+//     let animalName = name;
+//     this.age = age;
+//     this.say = function() {
+//         console.log("Voice")
+//     }
+//     this.run = function() {
+//         console.log("Run")
+//     }
+// }
+
+// let cat = new Animal("Murka", 5);
+// cat.run();
+// cat.say();
+// console.log(cat);
+
+
+// function Dog(name, value) {
+//     Animal.call(this, name, value);
+//     this.addAge = function() {
+//         this.age += 10;
+//     }
+//     this.say= function() {
+//         console.log("Гав");
+//     }
+//     let beforeRun = this.run;
+//     this.run  = function() {
+//         let commandToRun = confirm("Животное откликаается на Фас?");
+//         if(commandToRun) beforeRun.call(this);
+//     }
+// }
+
+// let dog = new Dog("Reks", 3);
+// console.log(dog.age);
+// dog.say();
+// dog.run();
+// dog.addAge();
+// console.log(dog);
+
+
+class Animal {
+    constructor(name, breed) {
+        this.__name = name;
+        this._breed = breed;
     }
-    console.log(summ);
-    if (summ > 9) {
-        summOfNumbers(summ);
-    } else return summ;
+    comeHere() {
+        console.log(`${this.__name} is here`);
+    }
+    say() {
+        console.log("Hello"); 
+    } 
 }
 
-let number = 987545999876543454;
+let animal = new Animal("Barsik", "buldog");
 
-let res = summOfNumbers(number);
-console.log(res);
+
+// function Cat(name, breed) {
+//     Animal.call(this, name, breed);
+// }
+
+// Cat.prototype = Object.create(Animal.prototype);
+
+// Cat.prototype.comeHere = function() {
+//     Animal.prototype.comeHere.call(this);
+//     console.log(`Хозяин`);
+// }
+
+// Cat.prototype.say = function() {
+//     console.log("may");
+// }
+
+// let cat = new Cat("Murka", "british");
+
+class Cat extends Animal {
+    constructor(name, breed) {
+        super(name, breed);
+    }
+    comeHere() {
+        super.comeHere();
+        console.log("хозяин");
+    }
+    say() {
+        console.log('Мяу');
+    }
+
+}
+
+let cat = new Cat("Murka", "british");
+
+
+
+
 
 
 
