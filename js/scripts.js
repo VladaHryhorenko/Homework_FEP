@@ -188,34 +188,35 @@
 
 //Task 8
 
-// function createTimer() {
-//     let performance;
-//     return function now() {
-//         return new Date();
-//     };
-// }
+function createTimer() {
+    let t1 = performance.now();
+    return function timer() {
+        let t2 = performance.now(); 
+        return console.log(t2-t1);
+    };
+}
 
-// let timer = createTimer();
-// alert('!')  // код, время выполнения которого нужно измерить
-// alert( timer() ); 
+let timer = createTimer();
+alert('!')  // код, время выполнения которого нужно измерить
+alert( timer() ); 
 
 
 //Task 9
 
-function createAdder(val) {
-    let name = val;
-    return function val(param) {
-        return name + param;
-    }
-};
+// function createAdder(val) {
+//     let name = val;
+//     return function val(param) {
+//         return name + param;
+//     }
+// };
 
-let hello = createAdder('Hello, ');
-alert( hello('John') ); // Hello, John
-alert( hello('Harry') ); // Hello, Harry
+// let hello = createAdder('Hello, ');
+// alert( hello('John') ); // Hello, John
+// alert( hello('Harry') ); // Hello, Harry
 
-let plus = createAdder(5);
-alert( plus(1) ); // 6
-alert( plus(5) ); // 10
+// let plus = createAdder(5);
+// alert( plus(1) ); // 6
+// alert( plus(5) ); // 10
 
 
 
