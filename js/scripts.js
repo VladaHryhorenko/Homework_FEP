@@ -133,20 +133,20 @@
 // console.log(dog);
 
 
-class Animal {
-    constructor(name, breed) {
-        this.__name = name;
-        this._breed = breed;
-    }
-    comeHere() {
-        console.log(`${this.__name} is here`);
-    }
-    say() {
-        console.log("Hello"); 
-    } 
-}
+// class Animal {
+//     constructor(name, breed) {
+//         this.__name = name;
+//         this._breed = breed;
+//     }
+//     comeHere() {
+//         console.log(`${this.__name} is here`);
+//     }
+//     say() {
+//         console.log("Hello"); 
+//     } 
+// }
 
-let animal = new Animal("Barsik", "buldog");
+// let animal = new Animal("Barsik", "buldog");
 
 
 // function Cat(name, breed) {
@@ -166,23 +166,106 @@ let animal = new Animal("Barsik", "buldog");
 
 // let cat = new Cat("Murka", "british");
 
-class Cat extends Animal {
-    constructor(name, breed) {
-        super(name, breed);
-    }
-    comeHere() {
-        super.comeHere();
-        console.log("хозяин");
-    }
-    say() {
-        console.log('Мяу');
-    }
+// class Cat extends Animal {
+//     constructor(name, breed) {
+//         super(name, breed);
+//     }
+//     comeHere() {
+//         super.comeHere();
+//         console.log("хозяин");
+//     }
+//     say() {
+//         console.log('Мяу');
+//     }
 
-}
+// }
 
-let cat = new Cat("Murka", "british");
+// let cat = new Cat("Murka", "british");
+
+const myDiv = document.createElement('div');
+console.log(myDiv);
+
+let textNode = document.createTextNode('hello');
+console.log(textNode);
+
+myDiv.innerHTML = ''+
+    '<div>'+
+        '<p>Hello World!</p>' +
+        '<a>My link</a>' +
+    '</div>';
+console.log(myDiv);
 
 
+
+// выбираем элемент который будет заменен
+const h1 = document.querySelector('h1');
+
+//parentNode - хранит родителя
+// заменяем
+h1.parentNode.replaceChild(myDiv, h1); // 1) тем чем меняем 2) то что меняем
+
+
+//get
+
+const block1 = document.getElementById('li2');
+console.log(block1);
+const block2 = document.getElementsByClassName('option');
+console.log(block2);
+
+const block3 = document.getElementsByTagName('a');
+console.log(block3);
+
+//querySelector
+const block4 = document.querySelector('ul li:nth-child(3)');
+console.log(block4);
+const block5 = document.querySelectorAll('li');
+console.log(block5);
+
+//клонирование
+
+//глвбокое - с внутренностями; не глубокое - только тег с атрибутами его
+
+const ul = document.querySelector('ul');
+const cloneUlNotDeep = ul.cloneNode();
+const cloneUlDeep = ul.cloneNode(true);
+console.log(cloneUlNotDeep);
+console.log(cloneUlDeep);
+
+//Добавление
+let el = document.querySelector('div');
+// добавление контента в элемент
+el.innerHTML += '<p>Hello World!</p>';
+
+
+const p2 = document.querySelector('#li2 p');
+const mainParent = p2.closest('div.first-div');
+
+//Работа с классами
+
+console.log(mainParent.classList);
+mainParent.classList.add('test-class');
+mainParent.classList.replace('test-class', 'new-class');
+
+
+
+//Атрибуты
+el = document.querySelector('img');
+console.log(el.getAttribute('title'));
+
+// установка атрибута
+el = document.querySelector('img');
+el.setAttribute('alt', 'Hello World!');
+
+// удаление атрибута
+el.removeAttribute('alt');
+
+
+//Стили
+el = document.querySelector('div');
+
+el.style.backgroundColor = 'green';
+el.style.display = 'none';
+el.style['border-radius'] = '5px';
 
 
 
