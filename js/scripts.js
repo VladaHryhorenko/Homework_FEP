@@ -27,71 +27,77 @@
 
 //Task 3
 
-// let arrOfUsers = [
-//     {
-//         firstName: "John",
-//         lastName: "Lol",
-//         age: 20
-//     },
-//     {
-//         firstName: "Kate",
-//         lastName: "Lol",
-//         age: 19
-//     },
-//     {
-//         firstName: "David",
-//         lastName: "Miller",
-//         age: 33
-//     },
-//     {
-//         firstName: "Lera",
-//         lastName: "Miller",
-//         age: 22
-//     },
-//     {
-//         firstName: "Pol",
-//         lastName: "Hill",
-//         age: 60
-//     },
-//     {
-//         firstName: "Rob",
-//         lastName: "Brown",
-//         age: 17
-//     },
-//     {
-//         firstName: "Bob",
-//         lastName: "White",
-//         age: 20
-//     },
-//     {
-//         firstName: "Richard",
-//         lastName: "Berrie",
-//         age: 16
-//     },
-//     {
-//         firstName: "Joan",
-//         lastName: "Roll",
-//         age: 29
-//     },
-//     {
-//         firstName: "Harry",
-//         lastName: "Black",
-//         age: 12
-//     }
-// ];
+let arrOfUsers = [
+    {
+        firstName: "John",
+        lastName: "Lol",
+        age: 20
+    },
+    {
+        firstName: "Kate",
+        lastName: "Lol",
+        age: 19
+    },
+    {
+        firstName: "David",
+        lastName: "Miller",
+        age: 33
+    },
+    {
+        firstName: "Lera",
+        lastName: "Miller",
+        age: 22
+    },
+    {
+        firstName: "Pol",
+        lastName: "Hill",
+        age: 60
+    },
+    {
+        firstName: "Rob",
+        lastName: "Brown",
+        age: 17
+    },
+    {
+        firstName: "Bob",
+        lastName: "White",
+        age: 20
+    },
+    {
+        firstName: "Richard",
+        lastName: "Berrie",
+        age: 16
+    },
+    {
+        firstName: "Joan",
+        lastName: "Roll",
+        age: 29
+    },
+    {
+        firstName: "Harry",
+        lastName: "Black",
+        age: 12
+    }
+];
+
 // let filterMinors = arrOfUsers.filter(function(item) {
 //     if (item.age < 18) {
 //         return item;
 //     }
 // });
+// let filterMinors = arrOfUsers.filter( item => item.age > 18);
 // console.log(filterMinors);
 
-// for (let i = 0; i < arrOfUsers.length; i++) {
-//     arrOfUsers[i].fullName = `${arrOfUsers[i].firstName} ${arrOfUsers[i].lastName}`;
-// }
+// arrOfUsers = arrOfUsers.map(item => {
+//     item.fullname = `${item.firstName} ${item.lastName}`;
+// });
+
 // console.log(arrOfUsers);
 
-// let selectFullName = arrOfUsers.filter(function(item) {
+
+
+
+// let selectFullName = filterMinors.filter(function(item) {
 //     delete item.age;
 //     delete item.firstName;
 //     delete item.lastName;
@@ -188,17 +194,17 @@
 
 //Task 8
 
-function createTimer() {
-    let t1 = performance.now();
-    return function timer() {
-        let t2 = performance.now(); 
-        return console.log(t2-t1);
-    };
-}
+// function createTimer() {
+//     let t1 = performance.now();
+//     return function timer() {
+//         let t2 = performance.now(); 
+//         return console.log(t2-t1);
+//     };
+// }
 
-let timer = createTimer();
-alert('!')  // код, время выполнения которого нужно измерить
-alert( timer() ); 
+// let timer = createTimer();
+// alert('!')  // код, время выполнения которого нужно измерить
+// alert( timer() ); 
 
 
 //Task 9
@@ -217,6 +223,20 @@ alert( timer() );
 // let plus = createAdder(5);
 // alert( plus(1) ); // 6
 // alert( plus(5) ); // 10
+
+
+
+const btnPlus = document.querySelector('.first');
+const btnMinus = document.querySelector('.second');
+
+btnPlus.addEventListener('click', function(event) {
+    console.log(event);
+    console.log("plus");
+});
+
+btnMinus.addEventListener('click', function() {
+    console.log("minus");
+});
 
 
 
