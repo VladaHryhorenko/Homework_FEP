@@ -80,28 +80,23 @@ let arrOfUsers = [
     }
 ];
 
-// let filterMinors = arrOfUsers.filter(function(item) {
-//     if (item.age < 18) {
-//         return item;
-//     }
-// });
-// let filterMinors = arrOfUsers.filter( item => item.age > 18);
-// console.log(filterMinors);
+let filterMinors = arrOfUsers.filter( item => item.age > 18);
+console.log(filterMinors); // только те, кто старше 18
 
-// arrOfUsers = arrOfUsers.map(item => {
-//     item.fullname = `${item.firstName} ${item.lastName}`;
-// });
+arrOfUsers.map( i => {
+    i.fullName = i.firstName + " " + i.lastName; 
+})
+console.log(arrOfUsers);
 
-// console.log(arrOfUsers);
-
-
+let newUser = arrOfUsers.map(i => {
+    return {fullName: i.fullName};
+    // return i.fullName;
+});
+console.log(newUser);
 
 
 // let selectFullName = filterMinors.filter(function(item) {
-//     delete item.age;
-//     delete item.firstName;
-//     delete item.lastName;
-//     return item;
+//     
 // });
 // console.log(selectFullName);
 
@@ -226,17 +221,17 @@ let arrOfUsers = [
 
 
 
-const btnPlus = document.querySelector('.first');
-const btnMinus = document.querySelector('.second');
+// const btnPlus = document.querySelector('.first');
+// const btnMinus = document.querySelector('.second');
 
-btnPlus.addEventListener('click', function(event) {
-    console.log(event);
-    console.log("plus");
-});
+// btnPlus.addEventListener('click', function(event) {
+//     console.log(event);
+//     console.log("plus");
+// });
 
-btnMinus.addEventListener('click', function() {
-    console.log("minus");
-});
+// btnMinus.addEventListener('click', function() {
+//     console.log("minus");
+// });
 
 
 
