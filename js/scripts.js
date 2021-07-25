@@ -168,8 +168,8 @@
 
 // let hello = concat.bind(null, "Hello", ' ');
 
-// alert(hello("Bob"));
-// alert(hello("World!"));
+// hello("Bob");
+// hello("World!");
 
 
 //Рекурсия
