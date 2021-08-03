@@ -13,6 +13,8 @@ const block = document.createElement('div');
 block.style.height = '400px';
 block.style.width = '400px';
 block.style.border = '2px solid black';
+block.style.boxSizing = 'border-box';
+
 document.body.appendChild(block);
 
 const coordinats1 = document.createElement('p');
@@ -27,7 +29,7 @@ document.body.insertBefore(coordinats1, block);
 
 
 const coordinats2 = document.createElement('p');
-let mouse2 = 'X: 0, Y: 0';
+let mouse2 = 'Координаты внутри блока: X: 0, Y: 0';
 coordinats2.innerText = mouse2;
 function innerMouseTracker(event) {
     mouse2 = ` Координаты внутри блока: X: ${event.offsetX}, Y: ${event.offsetY}`;
@@ -35,4 +37,6 @@ function innerMouseTracker(event) {
 }
 
 block.addEventListener('mousemove', innerMouseTracker, false);
+
+    
 document.body.appendChild(coordinats2);
