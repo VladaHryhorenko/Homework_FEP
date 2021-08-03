@@ -4,9 +4,44 @@
 <head>
   <meta charset="UTF-8">
   <title>HW1</title>
+  <style>
+    body {
+      font-family: 'Roboto';
+      display: flex; 
+      justify-content: center;
+    }
+    #container {
+      width: 50%;
+      border: 3px solid rgb(31, 35, 56);
+    }
+    button {
+      font-size: 24px;
+      padding: 8px 16px;
+      color: rgb(31, 35, 56);
+      background-color: rgb(110, 119, 170);
+      margin: 20px 40px;
+      border-radius: 15px;
+
+    }
+    .button-block {
+      display: flex;
+      justify-content: center;
+    }
+    h2 {
+      text-align: center;
+    }
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <h1>Hello world!</h1>
+    <div id="container">
+      <div class="button-block">
+        <button id="start">Start</button>
+        <button id="stop">Stop</button>
+      </div>
+    </div>
     <script src="js/scripts.js" type="text/javascript"></script>
 </body>
