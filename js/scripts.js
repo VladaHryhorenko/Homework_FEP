@@ -5,9 +5,12 @@ document.body.style.padding = '50px';
 document.body.style.boxSizing = 'border-box';
 
 
+const container = document.createElement('div');
+document.body.prepend(container);
+
 const title = document.createElement('h2');
 title.innerText = "События";
-document.body.appendChild(title);
+container.appendChild(title);
 
 const block = document.createElement('div');
 block.style.height = '400px';
@@ -15,7 +18,7 @@ block.style.width = '400px';
 block.style.backgroundColor = 'rgb(255,250,205)'
 block.style.boxSizing = 'border-box';
 
-document.body.appendChild(block);
+container.appendChild(block);
 
 const coordinats1 = document.createElement('p');
 let mouse = 'X: 0, Y: 0';
@@ -25,7 +28,7 @@ function mouseTracker(event) {
     coordinats1.innerText = mouse;
 };
 document.body.addEventListener('mousemove', mouseTracker, false);
-document.body.insertBefore(coordinats1, block);
+container.insertBefore(coordinats1, block);
 
 
 const coordinats2 = document.createElement('p');
@@ -39,4 +42,4 @@ function innerMouseTracker(event) {
 block.addEventListener('mousemove', innerMouseTracker, false);
 
     
-document.body.appendChild(coordinats2);
+container.appendChild(coordinats2);
