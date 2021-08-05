@@ -1,7 +1,7 @@
 
 document.body.style.fontFamily = 'Roboto';
 document.body.style.boxSizing = 'border-box';
-document.body.style.margin = '0'
+document.body.style.margin = '0';
 let container = document.createElement('div');
 container.style.display = 'flex';
 container.style.justifyContent = 'center';
@@ -10,7 +10,7 @@ container.style.height = '100vh';
 container.style.width = '100vw';
 container.style.background = 'url(../img/bg-main.jpg) no-repeat';
 container.style.backgroundSize = 'cover';
-document.body.appendChild(container);
+document.body.prepend(container);
 let button = document.createElement('button');
 button.innerText = 'Get info';
 button.style.padding = '20px 30px';
@@ -33,7 +33,7 @@ function createContent(data) {
     contentSect.style.background = 'url(../img/bg.jpg) repeat'; // специально поставила повторяющийся фон
     contentSect.style.backgroundSize = '100%';
     contentSect.style.padding = '50px 0px'
-    document.body.appendChild(contentSect);
+    document.body.prepend(contentSect);
     let title = document.createElement('h1');
     title.innerText = 'Planets';
     title.style.fontSize = '64px';
