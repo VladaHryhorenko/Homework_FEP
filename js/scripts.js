@@ -12,7 +12,7 @@ document.body.appendChild(title);
 const block = document.createElement('div');
 block.style.height = '400px';
 block.style.width = '400px';
-block.style.border = '2px solid black';
+block.style.backgroundColor = 'rgb(255,250,205)'
 block.style.boxSizing = 'border-box';
 
 document.body.appendChild(block);
