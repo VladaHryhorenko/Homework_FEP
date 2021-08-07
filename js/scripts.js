@@ -1,35 +1,103 @@
 const $form = $('#search-form');
 const $input = $('[name = "clip-name"]');
-const $list = $('#clip-list');
-const clips = [];
+let $clips = [];
 const $button = $('#button-submit');
+const $holder = $('.content-holder')
+let text = 'park';
 
 
 
 
 const createContent = (data) => {
-    $list.empty();
-    $clips = data;
-    console.log($clips);
-    /*data.forEach((item) => {
-         $('<li>')
-         .append(
-            $('<a href="">')
-            .text(item.volumeInfo.title)
-         )
-        .attr('data-id', item.id)
-        .addClass('list-group-item')
-        .appendTo($list)
-    });*/
+    $('#clip-list').detach();
+    $('.no-results').detach();
+    //console.log(data);
+    data = JSON.parse(data);
+    $clips = data['results'];
+    
+    if($clips.length === 0) {
+        $holder
+            .append(
+                $('<p>')
+                .text('No results')
+                .addClass('no-results')
+            )
+    } else {
+        $holder
+        .append(
+            $('<ul>')
+                .addClass('clips-link slider')
+                .attr({ id: 'clip-list' })
+        )
+        $clips.forEach((item) => {
+            if (item['trackName'] === undefined) {
+                item['trackName'] = 'Anonimus';
+            }
+            if (item['artistName'] === undefined) {
+                item['artistName'] = 'Anonimus';
+            }
+            if (item['collectionName'] === undefined) {
+                item['collectionName'] = 'No collection';
+            }
+
+            $('.clips-link')
+                .append(
+                    $('<li>')
+                        .append(
+                            $('<div>')
+                                .addClass('video-block')
+                                .append(
+                                    $('<video>')
+                                        .append(
+                                            $('<source>')
+                                                .attr({ src: item['previewUrl'], type: 'video/mp4' })
+                                        )
+                                        .attr({ width: '100%', height: '100%', controls: "controls"})
+                                        .addClass('video-track')
+                                )
+                        )
+                        .append(
+                            $('<h2>')
+                                .text(item['trackName']).addClass('video-name')
+                        )
+                        .append(
+                            $('<h3>')
+                                .text(item['artistName']).addClass('video-artist')
+                        )
+                        .append(
+                            $('<h3>')
+                                .text('Collection: ' + item['collectionName']).addClass('video-collname')
+                        )
+                        .addClass('clips-item')
+                        .appendTo($('.clips-link'))
+                )
+        })
+        $('.slider').slick({
+            infinite: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            centerMode: true,
+            centerPadding: '0',
+            adaptiveHeight: true,
+            onAfterChange : function() {
+                player.stopVideo();
+            }
+        })
+        .on('beforeChange', function(event, slick, currentSlide, nextSlide){
+            $(".video-track").each(function(){
+              this.pause();
+            });
+        });
+    }
 }
 
 const getInfo = (text) => {
-    $.get("https://itunes.apple.com/search", {limit: 10, entity: musicVideo, term:text})
-    .done((response) =>
-        createContent(response.items))
-    .fail((error) => {
-        console.log(error);
-    })
+    $.get("https://itunes.apple.com/search?limit=10&entity=musicVideo&term=" + text, {})
+        .done((response) =>
+            createContent(response))
+        .fail((error) => {
+            console.log(error);
+        })
 }
 
 $form.on('submit', (event) => { // on = обработчик событий
@@ -38,33 +106,10 @@ $form.on('submit', (event) => { // on = обработчик событий
     if (text) {
         getInfo(text);
     }
-    // $button.keydown(function(e) {
-    //     if(e.keyCode === 13) {
-    //       // можете делать все что угодно со значением текстового поля console.log($(this).val());
-    //     }
-    // });
 });
 
+getInfo(text);
 
-$list.on('click', '[data-id]', function(event) {
-    event.preventDefault();
-    const bookID = $(this).data('id');
-    const {volumeInfo} = $books.find(item => item.id === bookID);
-    $currentBook.fadeIn();
-    $currentBook.find('.book-title')
-    .text(`${volumeInfo.title} | ${volumeInfo.authors.join(", ")} (${volumeInfo.publishedDate})`);
 
-    const $bookDescription = $currentBook.find('.book-description');
-    $bookDescription.empty();
 
-    $('<img>').attr('src', volumeInfo.imageLinks.thumbnail)
-    .appendTo($bookDescription);
 
-    $('<p>').text(volumeInfo.description)
-    .appendTo($bookDescription);
-    $('<a>').attr('href', volumeInfo.prevLink)
-    .attr('target', '_blank')
-    .text('Read more...')
-    .addClass('float-right')
-    .appendTo($bookDescription);
-})
