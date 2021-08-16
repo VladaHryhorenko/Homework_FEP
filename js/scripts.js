@@ -32,21 +32,23 @@ buttonBlock.appendChild(stopButton)
 let el = document.createElement('h2');
 el.style.textAlign = 'center';
 let date = new Date();
+
 let interval;
 
 container.appendChild(el);
-el.innerText = `Время: ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()} `;
+el.innerText = `Время: ${(date.getHours()) < 10 ? "0" + date.getHours() : date.getHours()}:${(date.getMinutes()) < 10 ? "0" + date.getMinutes() : date.getMinutes()}:${(date.getSeconds()) < 10 ? "0" + date.getSeconds() : date.getSeconds()}`;
+console.log(el.innerText);
 
 function clockFunc() {
         interval = setInterval( () => {
         date = new Date();
-        el.innerText = `Время: ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()} `}, 1);
+        el.innerText = `Время: ${(date.getHours()) < 10 ? "0" + date.getHours() : date.getHours()}:${(date.getMinutes()) < 10 ? "0" + date.getMinutes() : date.getMinutes()}:${(date.getSeconds()) < 10 ? "0" + date.getSeconds() : date.getSeconds()}`}, 1);
        
 }
 function stopClock() {
     clearInterval(interval);
     date = new Date();
-    el.innerText = `Время: ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()} `;
+    el.innerText = `Время: ${(date.getHours()) < 10 ? "0" + date.getHours() : date.getHours()}:${(date.getMinutes()) < 10 ? "0" + date.getMinutes() : date.getMinutes()}:${(date.getSeconds()) < 10 ? "0" + date.getSeconds() : date.getSeconds()}`;
 }
 
 startButton.addEventListener('click', clockFunc);
