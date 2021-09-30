@@ -1,12 +1,12 @@
 import {connect} from "react-redux";
 import ButtonSection from '../components/ButtonSection';
-import { actionSetColor } from "../actions/counter"
+import {actionSetColor} from "../actions/buttonAction";
 
 const mapStateToProps = (state) => ({
-    counter: state.b.count
+    color: state.b.color
 });
 const mapDispatchToProps = {
     actionSetColor: actionSetColor,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ButtonSection);
+export const ButtonContainer = connect(mapStateToProps, mapDispatchToProps)(ButtonSection);

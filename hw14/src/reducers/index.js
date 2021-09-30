@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 
-import { buttonReducer } from './counter';
+import { buttonColorReducer} from './buttonColorReaducer';
 
 export const rootReducer = combineReducers({
-    b: buttonReducer,
+    b: buttonColorReducer,
 })

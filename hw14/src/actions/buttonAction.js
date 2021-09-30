@@ -1,3 +1,6 @@
-export const actionSetColor = () => ({
-    type: COUNTER_INC,
+import { COLOR } from "../constants";
+
+export const actionSetColor = (color) => ({
+    type: COLOR,
+    color: color
 })
