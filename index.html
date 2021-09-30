@@ -1,12 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <title>HW1</title>
-</head>
-
-<body>
-    <h1>Hello world!</h1>
-    <script src="js/scripts.js" type="text/javascript"></script>
-</body>
+<html>
+  <head>
+    <title> JS task </title>
+    <style>
+      body {
+        padding: 20px;
+      }
+      canvas {        
+        border: 1px solid black;
+        background: white;
+        box-shadow: 0px 0px 20px 3px rgba(0,0,0,0.3);
+      }
+      body > div {
+        display: flex;
+        align-items: center;
+        
+        margin-bottom: 20px;
+      }
+      div > span {
+        font-weight: 700;
+      }
+      button {
+        padding: 16px 25px;
+        border-radius: 12px;
+        margin: 0 10px;
+       
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <button id="start"> Start </button>
+      <button id="stop"> Stop </button>
+      <span> Score: <span id="score">  </span> </span>
+    </div>
+    <canvas width="640" height="480" id="canvas"></canvas>
+    <script type="text/javascript" src="js/main.js"></script>
+  </body>
+</html>
