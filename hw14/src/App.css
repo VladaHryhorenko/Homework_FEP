@@ -22,3 +22,10 @@ button {
 .blue {
   background-color: #73b7d8;
 }
+
+ol {
+  text-align: left;
+}
+li {
+  font-size: 20px;
+}
